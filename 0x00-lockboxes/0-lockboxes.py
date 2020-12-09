@@ -6,8 +6,7 @@ def canUnlockAll(boxes):
     Function that determines if all boxes can be opened
 
     Params:
-        boxes (list): is a list of lists 
-
+        boxes (list): is a list of lists
     Retorna:
         True if all boxes can be opened, else return False
     """
@@ -17,4 +16,3 @@ def canUnlockAll(boxes):
             if key not in jump:
                 jump.append(key)
     return True if len(jump) == len(boxes) else False
-
