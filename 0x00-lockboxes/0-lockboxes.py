@@ -12,14 +12,14 @@ def canUnlockAll(boxes):
     Retorna:
         True if all boxes can be opened, else return False
     """
-    if boxes == [] or boxes == [[]]:
+    if boxes == [[]] or boxes == []:
         return True
     box_list = [x for x in range(len(boxes))]
     jump = [0]
     for idx in jump:
         for key in boxes[idx]:
-            if key not in box_list or key >= len(boxes):
+            if key > len(boxes):
                 return False
-            elif key not in jump:
+            elif key not in jump and key in box_list:
                 jump.append(key)
     return True if len(jump) == len(boxes) else False
