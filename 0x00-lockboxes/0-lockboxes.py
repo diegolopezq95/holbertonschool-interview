@@ -18,8 +18,8 @@ def canUnlockAll(boxes):
     jump = [0]
     for idx in jump:
         for key in boxes[idx]:
-            if key > len(boxes) or key not in box_list:
+            if key not in box_list or key >= len(boxes):
                 return False
-            if key not in jump:
+            elif key not in jump:
                 jump.append(key)
     return True if len(jump) == len(boxes) else False
