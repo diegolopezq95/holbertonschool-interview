@@ -5,23 +5,20 @@
 
 /**
  * insert_node - inserts a number into a sorted singly linked list.
- * head - initial node
- * number - number in the node
- * Return: Always 0.
+ * @head: initial node
+ * @number: number in the node
+ * Return: new node or NULL.
  */
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *tmp;
-	listint_t *new;
+	listint_t *tmp, *new;
 
 	tmp = *head;
 	if (head == NULL)
 		return (NULL);
 	new = malloc(sizeof(listint_t));
-	if (new == NULL)
-		return (NULL);
 	new->n = number;
-    new->next = NULL;
+	new->next = NULL;
 	if (*head == NULL)
 	{
 		*head = new;
@@ -33,7 +30,7 @@ listint_t *insert_node(listint_t **head, int number)
 		{
 			new->next = tmp;
 			*head = new;
-			return (*head);	
+			return (*head);
 		}
 		else
 		{
@@ -53,5 +50,5 @@ listint_t *insert_node(listint_t **head, int number)
 			}
 			return (new);
 		}
-	}	
+	}
 }
