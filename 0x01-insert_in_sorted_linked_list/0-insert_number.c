@@ -31,18 +31,14 @@ listint_t *insert_node(listint_t **head, int number)
 	}
 	else
 	{
-		while (tmp->next)
-		{
-			if (tmp->next->n > new->n && tmp->n < new->n)
-			{
-				new->next = tmp->next;
-				tmp->next = new;
-			}
+		while (tmp->next && tmp->next->n < new->n)
 			tmp = tmp->next;
-			if (tmp->next == NULL && tmp->n < new->n)
-			{
-				tmp->next = new;
-			}
+		if (tmp->next == NULL)
+			tmp->next = new;
+		else
+		{
+			new->next = tmp->next;
+			tmp->next = new;
 		}
 	}
 	return (new);
