@@ -1,10 +1,12 @@
 #!/usr/bin/python3
-"""Calculates the fewest number of operations needed to result in exactly n H characters in the file.
+"""Calculates the fewest number of operations needed to result in exactly n
+H characters in the file.
 """
+
 
 def minOperations(n):
     """
-    Function that calculates the fewest number of operations 
+    Function that calculates the fewest number of operations
 
     Params:
         n (int): number to reach with min operations
@@ -25,4 +27,3 @@ def minOperations(n):
             char += char
             operations += paste
     return operations
-
