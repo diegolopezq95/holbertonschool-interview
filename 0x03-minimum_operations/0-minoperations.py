@@ -15,17 +15,17 @@ def minOperations(n):
     """
     if n < 2 or not isinstance(n, int):
         return 0
-    char = 1
-    copy_paste = 2
-    paste = 1
-    operations = 0
-    while char < n:
-        if n % char == 0:
-            paste = char
-            char += paste
-            operations += copy_paste
-        else:
-            char += paste
-            paste = 1
-            operations += paste
-    return operations
+    else:
+        char = 1
+        copy_paste = 2
+        paste = 1
+        operations = 0
+        while char < n:
+            if n % char == 0:
+                paste = char
+                char += paste
+                operations += copy_paste
+            else:
+                char += paste
+                operations += 1
+        return operations
