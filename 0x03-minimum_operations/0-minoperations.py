@@ -20,12 +20,13 @@ def minOperations(n):
         copy_paste = 2
         paste = 1
         operations = 0
+        count = 1
         while char < n:
             if n % char == 0:
-                paste = char
-                char += paste
+                count = char
+                char += count
                 operations += copy_paste
             else:
-                char += paste
-                operations += 1
+                char += count
+                operations += paste
         return operations
