@@ -13,13 +13,13 @@ def minOperations(n):
     Returns:
         int
     """
-    if n <= 1:
+    if n < 2 or not isinstance(n, int):
         return 0
     char = 1
     copy_paste = 2
     paste = 1
     operations = 0
-    while n > 1 and char < n:
+    while char < n:
         if n % char == 0:
             paste = char
             char += paste
